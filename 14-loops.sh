@@ -21,7 +21,7 @@ VALIDATE(){
 
 for package in $@ # sudo sh 13-loops.sh nginx mysql nodejs
 do
-    dnf list installed $package &>>>$LOGS_FILE
+    dnf list installed $package &>>$LOGS_FILE
     if [ $? -ne 0 ]; then
          echo "$package not installed, installing now"
     dnf install $pacakage -y &>>$LOGS_FILE
