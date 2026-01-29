@@ -2,7 +2,8 @@
 
 USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script"
-LOGS_FILE="/var/log/shell-script/$0.log"
+TIME_STAMP= $(date + %Y-%m-%d-%H-%M-%S)
+LOGS_FILE="$LOGS_FOLDER/$TIME_STAMP.log"
 
 if [ $USERID -ne 0 ]; then
     echo "Please run this script with root user access"
