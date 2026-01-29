@@ -13,10 +13,10 @@ mkdir -p $LOGS_FOLDER
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-         echo -e "$2 ... FAILURE"
+         echo "$2 ... FAILURE"
          exit 1
     else
-        echo -e "$2 ... SUCCESS"
+        echo "$2 ... SUCCESS"
     fi         
 }
 
