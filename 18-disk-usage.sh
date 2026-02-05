@@ -4,6 +4,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e0m"
+MESSAGE=""
 
 log(){
     echo -e "$(date +"%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
