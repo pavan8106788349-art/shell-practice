@@ -2,10 +2,11 @@
 
 NUMBER=$1
 
-# -gt -> greater than
-# -lt -> less than
-# -eq -> equal
-# -ne -> not equal
-if [ $NUMBER -gt 20 ]; then
-    echo "Given number: $NUMBER is greater than 20"
-fi  
+if [ -z "$NUMBER" ]; then
+  echo "Please provide a number"
+  exit 1
+fi
+
+if [ "$NUMBER" -gt 20 ]; then
+  echo "Given number: $NUMBER is greater than 20"
+fi
