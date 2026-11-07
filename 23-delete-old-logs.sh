@@ -8,10 +8,10 @@ N="\e[0m"
 LOGS_DIR=/home/ec2-user/app-logs
 LOGS_FILE="/var/log/shell-script/$0.log"
 
-if [ ! -d LOGS_DIR ]; then
-    echo -e "LOGS_DIR does not exist"
-    exit1
+if [ ! -d "$LOGS_DIR" ]; then
+    echo -e "$R $LOGS_DIR does not exist $N"
+    exit 1
 fi
 
-FILES_TO_DELETE=$(find $LOGS_DIR -name "*.log" -mtime +14)
-# echo "$FILES_TO_DELETE"
+FILES_TO_DELETE=$(find "$LOGS_DIR" -name "*.log" -mtime +14)
+echo "$FILES_TO_DELETE"
