@@ -43,18 +43,18 @@ if [ ! -d $DEST_DIR ]; then
 fi    
 
 ### Find the files
-FILES=$(find $SOURCE_DIR -name ".*log" -type f -mtime +$DAYS)
+FILES=$(find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS")
 
 log "Backup started"
 log "Source Directory: $SOURCE_DIR"
 log "Destination Directory: $DEST_DIR"
 log "Days:$DAYS"
 
-if [ -z "{$FILES}" ]; then
+if [ -z "$FILES" ]; then
     log "No files to archieve... $Y skipping $N"
 else
    # app-logs-$timestamp.zip
-   logs "Files found to archieve: $FILES"
+   log "Files found to archive: $FILES"
    TIMESTAMP=$(date +%F-%H-%M-%S)
    ZIP_FILE_NAME="$DEST_DIR/app-logs/-$TIMESTAMP.tar.gz"
    echo "Archieve name: $ZIP_FILE_NAME"
