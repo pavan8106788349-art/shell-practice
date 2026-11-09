@@ -57,8 +57,8 @@ else
     log "Files found to archieve: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz"
-    log "Archieve name: $ZIP_FILE_NAME"
-    tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
+    echo "Archieve name: $ZIP_FILE_NAME"
+    tar -zvcf $ZIP_FILE_NAME $(find $SOURCE_DIR -name ".*log -type f -mtime +$DAYS)
 
     # Check archieve is success or not
     if [ -f $ZIP_FILE_NAME ]; then
